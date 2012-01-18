@@ -54,7 +54,11 @@ class Employee extends EmpDep {
 	$r = oci_execute($q, OCI_DEFAULT);  
   }
 
-  function delete() {}
+	function delete(){
+		$query = "delete from employees where id=:p_id";
+		$q = oci_parse($this->db, $query);
+		oci_bind_by_name($q, ":p_id", $this->id);
+	} 
   
   function update() {}
   
