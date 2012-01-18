@@ -83,7 +83,17 @@ class EmployeeTest extends PHPUnit_Framework_TestCase
 	
 	public function testDelete()
 	{
-	  $this->MarkTestIncomplete("testDelete");
+	   $emp = new Employee;
+	   $emp->last_name = 'DeleteName';
+	   $emp->email = 'deletename';
+	   $emp->salary = 9999;	   
+       $emp->store();
+	   
+	   $emp2 = new Employee;
+	   $emp2->last_name = 'DeleteName';
+	   $emp2->delete();
+	   $this->assertEquals($emp->last_name, $emp2->last_name);
+	   	   
 	}
 }
 ?>

@@ -54,7 +54,12 @@ class Employee extends EmpDep {
 	$r = oci_execute($q, OCI_DEFAULT);  
   }
 
-  function delete() {}
+  function delete() {
+    $q = oci_parse($this->db,
+      "delete from employees where last_name = :b_last_name");
+    oci_bind_by_name
+	   ($q, ":b_last_name", $this->last_name);
+	$r = oci_execute($q, OCI_DEFAULT);  }
   
   function update() {}
   
