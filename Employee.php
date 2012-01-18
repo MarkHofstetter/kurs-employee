@@ -54,4 +54,6 @@ class Employee extends EmpDep {
 	$r = oci_execute($q, OCI_DEFAULT);  
   }
 
+  function delete() {}
+  
 }

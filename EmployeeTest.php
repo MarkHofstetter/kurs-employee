@@ -80,5 +80,8 @@ class EmployeeTest extends PHPUnit_Framework_TestCase
 	   $this->object->read();
 	   
     }
+	
+	public function testDelete()
+	{}
 }
 ?>
