@@ -1,6 +1,6 @@
 <?php
 
-require_once 'C:\xampp\htdocs\employee\Employee.php';
+require_once 'Employee.php';
 
 /**
  * Test class for Employee.
