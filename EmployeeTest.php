@@ -82,6 +82,8 @@ class EmployeeTest extends PHPUnit_Framework_TestCase
     }
 	
 	public function testDelete()
-	{}
+	{
+	  $this->MarkTestIncomplete("testDelete");
+	}
 }
 ?>
