@@ -66,17 +66,15 @@ class EmployeeTest extends PHPUnit_Framework_TestCase
     public function testStore2(){
     	$employee = new Employee();
     
-    	$employee->firstName = "Monika";
-    	$employee->lastName = "Timel";
+    	$employee->last_name = "Timel";
     	$employee->email = "monika@timel.at";
     
     	$employee->salary = 124738;
-    	$employee->jobId = "MK_MAN";
     	$employee->store();
     	$employee->db->commit;
     
     	$employee2 = new Employee();
-    	$employee2->lastName = "Timel";
+    	$employee2->last_name = "Timel";
     	try{
     		$employee2->read();
     	}catch(PEAR_Exception $ex){
