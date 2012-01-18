@@ -56,4 +56,6 @@ class Employee extends EmpDep {
 
   function delete() {}
   
+  function update() {}
+  
 }
