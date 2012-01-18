@@ -21,5 +21,4 @@ if ($_GET['name']) {
        // print $e;
 	   echo "Not found<br>\n";
   }
-   $employee->commit();
 }
