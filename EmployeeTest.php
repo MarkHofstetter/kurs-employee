@@ -62,6 +62,36 @@ class EmployeeTest extends PHPUnit_Framework_TestCase
 
     /**
      * @covers {className}::{origMethodName}
+     */
+    public function testStore2(){
+    	$employee = new Employee();
+    
+    	$employee->firstName = "Monika";
+    	$employee->lastName = "Timel";
+    	$employee->email = "monika@timel.at";
+    
+    	$employee->salary = 124738;
+    	$employee->jobId = "MK_MAN";
+    	$employee->store();
+    	$employee->db->commit;
+    
+    	$employee2 = new Employee();
+    	$employee2->lastName = "Timel";
+    	try{
+    		$employee2->read();
+    	}catch(PEAR_Exception $ex){
+    		echo " not found";
+    	}
+    	$this->assertEquals($employee2->salary, 124738);
+    	try{
+    		$this->delete;
+    		$this->assertTrue(true);
+    	}catch(PEAR_Exception $ex){
+    		echo " delete exeption";
+    	}
+    }
+    /**
+     * @covers {className}::{origMethodName}
      * @todo Implement testStore().
      */
     public function testRead()
