@@ -93,6 +93,11 @@ class EmployeeTest extends PHPUnit_Framework_TestCase
 	   $emp2->last_name = 'DeleteName';
 	   $emp2->delete();
 	   $this->assertEquals($emp->last_name, $emp2->last_name);
+	   
+	   $this->setExpectedException('PEAR_Exception');
+	   $name = 'DeleteName';
+       $this->object->set_last_name($name);
+	   $this->object->read();
 	   	   
 	}
 }
