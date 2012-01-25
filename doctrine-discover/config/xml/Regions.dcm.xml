@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Regions" table="REGIONS">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="regionId" type="integer" column="REGION_ID">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="regionName" type="string" column="REGION_NAME" length="25"/>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>
