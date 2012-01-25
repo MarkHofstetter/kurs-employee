@@ -13,7 +13,7 @@ class Department
 
 	/**
      * @OneToMany(targetEntity="Employee", mappedBy="department")
-     * @var Bug[]
+     * @var Employee[]
      */
     protected $employees_in_department;
   

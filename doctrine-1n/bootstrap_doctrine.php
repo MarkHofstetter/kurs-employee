@@ -1,6 +1,8 @@
 <?php
 // bootstrap_doctrine.php
 
+global $entityManager;
+
 // See :doc:`Configuration <../reference/configuration>` for up to date autoloading details.
 use Doctrine\ORM\Tools\Setup;
 
@@ -11,7 +13,8 @@ Setup::registerAutoloadPEAR();
 $isDevMode = true;
 //$config = Setup::createXMLMetadataConfiguration(array(__DIR__."/config/xml"), $isDevMode);
 // or if you prefer yaml or annotations
-$config = Setup::createAnnotationMetadataConfiguration(array(__DIR__."/entities"), $isDevMode);
+$config = Setup::createAnnotationMetadataConfiguration(
+array(__DIR__."/entities"), $isDevMode);
 //$config = Setup::createYAMLMetadataConfiguration(array(__DIR__."/config/yaml"), $isDevMode);
 
 // database configuration parameters
@@ -30,3 +33,5 @@ $conn = array(
 
 // obtaining the entity manager
 $entityManager = \Doctrine\ORM\EntityManager::create($conn, $config);
+
+

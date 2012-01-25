@@ -30,5 +30,13 @@ class Employee
 
   public function getId() {
         return $this->id;
-  }	
+  }
+
+  public function setSalary($salary) {
+        $this->salary = $salary;
+  }  
+  
+  public function setDepartment($department) {
+        $this->department = $department;
+  }  
 }
