@@ -15,7 +15,7 @@ class Default_Model_Employee
     protected $salary;
     
 	/**
-     * @ManyToOne(targetEntity="Department", inversedBy="employees_in_department")
+     * @ManyToOne(targetEntity="Default_Model_Department", inversedBy="employees_in_department")
      */
     protected $department;
 

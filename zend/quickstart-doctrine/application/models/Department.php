@@ -12,7 +12,7 @@ class Default_Model_Department
     protected $name;
 
 	/**
-     * @OneToMany(targetEntity="Employee", mappedBy="department")
+     * @OneToMany(targetEntity="Default_Model_Employee", mappedBy="department")
      * @var Employee[]
      */
     protected $employees_in_department;

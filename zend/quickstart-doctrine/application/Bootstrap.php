@@ -34,7 +34,6 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
        $classLoader = new \Doctrine\Common\ClassLoader(
             'Doctrine'
 	   ##	,            APPLICATION_PATH . '/../library/'
-	   ##     'C:\xampp\php\PEAR'
 	   ## doctrine is installed via pear!
         );
         $classLoader->register();

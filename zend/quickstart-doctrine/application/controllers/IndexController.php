@@ -16,7 +16,16 @@ class IndexController extends Zend_Controller_Action
         $this->_em->persist($test);
         $this->_em->flush();
 		
-		$this->view;
+		$dql = "SELECT d FROM Default_Model_Department d";
+
+        $query = $this->_em->createQuery($dql);
+        $query->setMaxResults(30);
+        $departments = $query->getResult();
+
+        foreach($departments AS $department) {    
+          echo $department->getName()."\n";
+	    }	
+	    $this->view;
 		
     }
 
