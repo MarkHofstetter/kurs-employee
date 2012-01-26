@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Countries" table="COUNTRIES">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="countryId" type="string" column="COUNTRY_ID">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="countryName" type="string" column="COUNTRY_NAME" length="40"/>
+    <many-to-one field="region" target-entity="Regions" orphan-removal="">
+      <join-columns>
+        <join-column name="REGION_ID" referenced-column-name="REGION_ID"/>
+      </join-columns>
+    </many-to-one>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

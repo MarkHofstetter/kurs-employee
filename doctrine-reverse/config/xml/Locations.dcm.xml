@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Locations" table="LOCATIONS">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="locationId" type="integer" column="LOCATION_ID">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="city" type="string" column="CITY" length="30"/>
+    <field name="postalCode" type="string" column="POSTAL_CODE" length="12"/>
+    <field name="stateProvince" type="string" column="STATE_PROVINCE" length="25"/>
+    <field name="streetAddress" type="string" column="STREET_ADDRESS" length="40"/>
+    <many-to-one field="country" target-entity="Countries" orphan-removal="">
+      <join-columns>
+        <join-column name="COUNTRY_ID" referenced-column-name="COUNTRY_ID"/>
+      </join-columns>
+    </many-to-one>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>
