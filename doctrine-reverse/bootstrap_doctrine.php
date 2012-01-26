@@ -30,4 +30,3 @@ $conn = array(
 
 // obtaining the entity manager
 $entityManager = \Doctrine\ORM\EntityManager::create($conn, $config);
-echo "after em";

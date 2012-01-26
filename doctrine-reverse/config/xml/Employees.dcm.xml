@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Employees" table="EMPLOYEES">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="employeeId" type="integer" column="EMPLOYEE_ID">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="commissionPct" type="decimal" column="COMMISSION_PCT"/>
+    <field name="email" type="string" column="EMAIL" length="25"/>
+    <field name="firstName" type="string" column="FIRST_NAME" length="20"/>
+    <field name="hireDate" type="datetime" column="HIRE_DATE"/>
+    <field name="lastName" type="string" column="LAST_NAME" length="25"/>
+    <field name="phoneNumber" type="string" column="PHONE_NUMBER" length="20"/>
+    <field name="salary" type="decimal" column="SALARY"/>
+    <many-to-one field="department" target-entity="Departments" orphan-removal="">
+      <join-columns>
+        <join-column name="DEPARTMENT_ID" referenced-column-name="DEPARTMENT_ID"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="job" target-entity="Jobs" orphan-removal="">
+      <join-columns>
+        <join-column name="JOB_ID" referenced-column-name="JOB_ID"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="manager" target-entity="Employees" orphan-removal="">
+      <join-columns>
+        <join-column name="MANAGER_ID" referenced-column-name="EMPLOYEE_ID"/>
+      </join-columns>
+    </many-to-one>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>
